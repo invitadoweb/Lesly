@@ -1,0 +1,183 @@
+/* Componentes reutilizables exclusivos de Bella Durmiente. */
+.bella-section-icon {
+  width: clamp(144px, 43vw, 220px);
+  margin: .45rem auto .9rem;
+}
+
+.bella-section-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 18px rgba(89, 39, 43, .24));
+}
+
+.wonder-ornament {
+  width: min(76%, 300px);
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: 58px 1fr 58px;
+  align-items: center;
+  gap: .5rem;
+  margin: calc(var(--espacio-seccion) * -.52) auto calc(var(--espacio-seccion) * .58);
+  opacity: 0;
+  transform: translateY(26px) scale(.78);
+  filter: drop-shadow(0 12px 18px rgba(89, 39, 43, .26));
+  transition: opacity .85s ease, transform .85s cubic-bezier(.2, 1.15, .28, 1), filter .85s ease;
+}
+
+.wonder-ornament img {
+  width: 100%;
+  max-height: 62px;
+  object-fit: contain;
+}
+
+.wonder-ornament img:first-child {
+  animation: bella-ornament-angle-left 4s ease-in-out infinite;
+  transform-origin: center;
+  animation-play-state: paused;
+}
+
+.wonder-ornament img:last-child {
+  animation: bella-ornament-angle-right 4s ease-in-out infinite;
+  transform-origin: center;
+  animation-play-state: paused;
+}
+
+.wonder-ornament.is-in-view img:first-child,
+.wonder-ornament.is-in-view img:last-child {
+  animation-play-state: running;
+}
+
+.wonder-ornament span {
+  height: 62px;
+  background: url("../medio.png") center / contain no-repeat;
+}
+
+.wonder-ornament.magic-reveal.is-visible {
+  transform: translateY(0) scale(1);
+}
+
+.bella-petal-breeze {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bella-petal-breeze img {
+  position: absolute;
+  top: -12svh;
+  left: var(--petal-left);
+  width: var(--petal-size);
+  height: auto;
+  opacity: .42;
+  filter: drop-shadow(0 5px 6px rgba(131, 57, 77, .16));
+  animation: bella-petal-breeze var(--petal-duration) linear var(--petal-delay) infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.bella-fairy-flight {
+  position: fixed;
+  z-index: 4;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bella-fairy-flight img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--fairy-size);
+  height: auto;
+  opacity: 0;
+  object-fit: contain;
+  transform-origin: center;
+  animation: bella-fairy-flight 42s linear var(--fairy-delay) infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@keyframes bella-ornament-angle-left {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+
+@keyframes bella-ornament-angle-right {
+  0%, 100% { transform: rotate(4deg); }
+  50% { transform: rotate(-4deg); }
+}
+
+@keyframes bella-petal-breeze {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -8svh, 0) rotate(0deg) scale(.72);
+  }
+  12% { opacity: .38; }
+  36% {
+    transform: translate3d(var(--petal-drift-soft), 31svh, 0) rotate(var(--petal-turn-soft)) scale(.9);
+  }
+  62% {
+    transform: translate3d(var(--petal-drift-mid), 61svh, 0) rotate(var(--petal-turn-mid)) scale(.82);
+  }
+  88% { opacity: .28; }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--petal-drift), 118svh, 0) rotate(var(--petal-turn)) scale(.64);
+  }
+}
+
+@keyframes bella-fairy-flight {
+  0%, 5% {
+    opacity: 0;
+    transform: translate3d(-28vw, 76svh, 0) rotate(-9deg) scaleX(var(--fairy-facing-out, -1)) scale(.78);
+  }
+  9% { opacity: .58; }
+  27% {
+    opacity: .72;
+    transform: translate3d(32vw, 51svh, 0) rotate(7deg) scaleX(var(--fairy-facing-out, -1)) scale(.94);
+  }
+  43% {
+    opacity: .62;
+    transform: translate3d(106vw, 16svh, 0) rotate(15deg) scaleX(var(--fairy-facing-out, -1)) scale(.84);
+  }
+  49%, 58% {
+    opacity: 0;
+    transform: translate3d(116vw, 4svh, 0) rotate(17deg) scaleX(var(--fairy-facing-out, -1)) scale(.76);
+  }
+  61% {
+    opacity: .46;
+    transform: translate3d(102vw, 10svh, 0) rotate(-14deg) scaleX(var(--fairy-facing-back, 1)) scale(.8);
+  }
+  80% {
+    opacity: .72;
+    transform: translate3d(22vw, 39svh, 0) rotate(8deg) scaleX(var(--fairy-facing-back, 1)) scale(.96);
+  }
+  94% {
+    opacity: .4;
+    transform: translate3d(-28vw, 68svh, 0) rotate(-13deg) scaleX(var(--fairy-facing-back, 1)) scale(.76);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-28vw, 76svh, 0) rotate(-9deg) scaleX(var(--fairy-facing-out, -1)) scale(.78);
+  }
+}
+
+@media (max-width: 520px) {
+  .wonder-ornament {
+    width: 84%;
+    min-height: 58px;
+    grid-template-columns: 52px 1fr 52px;
+  }
+
+  .bella-petal-breeze img { opacity: .34; }
+  .bella-fairy-flight img { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bella-petal-breeze,
+  .bella-fairy-flight { display: none; }
+}

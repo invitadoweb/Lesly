@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años Lesly Nathaly Oropeza Montes </title>
+
+    <!-- Meta tags para redes sociales -->
+    <meta property="og:title" content="Mis XV Años Lesly Nathaly Oropeza Montes ">
+    <meta property="og:description" content="¡Te invito a celebrar conmigo este día tan especial!">
+    <meta property="og:image" content="https://invitadoweb.github.io/Lesly/f.png">
+    <meta property="og:url"   content="https://invitadoweb.github.io/Lesly">
+    <meta property="og:type"  content="website">
+
+ 
+
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+ 
+<body
+  data-tipo-evento="xv"
+  data-titulo-evento="Mis XV"
+  data-nombre="Lesly Nathaly Oropeza Montes"
+  data-numero-evento="XV"
+  data-respuesta-fotos="false"
+  data-hide-rsvp-guests="true">
+
+  
+  <div class="phone-preview-shell">
+    <div class="phone-preview-stage">
+      <div class="invite-viewport">
+
+        <!-- CAPAS AMBIENTALES -->
+        <div class="ambient-overlay" aria-hidden="true"></div>
+        <div class="magic-field" aria-hidden="true">
+          <i data-spark></i><i data-spark></i><i data-spark></i>
+          <i data-spark></i><i data-spark></i><i data-spark></i>
+        </div>
+        <div class="decor-layer" aria-hidden="true"></div>
+
+        <!-- SOBRE / ENTRADA -->
+        <section class="envelope-screen" id="entrada" aria-label="Abrir invitación">
+          <video
+            class="entry-video"
+            id="entrada-video"
+            src="video.mp4"
+            preload="metadata"
+            playsinline
+            webkit-playsinline
+            muted
+          ></video>
+          <button class="open-seal" type="button" data-open>
+            <span id="entrada-boton">Abrir invitación</span>
+          </button>
+        </section>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="invite-shell" id="invitacion">
+
+          <!-- HERO -->
+          <section class="hero-block" id="inicio">
+            <p class="eyebrow" id="hero-eyebrow"></p>
+            <h1 id="hero-name"></h1>
+            <figure class="hero-silueta-deco" aria-hidden="true">
+              <img src="silueta.webp" alt="" loading="eager" decoding="async">
+            </figure>
+            <p class="mood" id="hero-mood"></p>
+
+            <figure class="portrait-frame" data-section-control="heroFoto">
+              <img id="foto-portada" src="foto.jpg">
+              <video id="hero-video" hidden preload="metadata" muted loop playsinline></video>
+            </figure>
+
+            <div class="hero-date hero-calendar" id="hero-date" aria-label="Fecha del evento">
+              <img class="hero-calendar-frame" src="https://pistachegirasol.com/Assets/bella-durmiente/iconos/calendario.webp?=cache02" alt="" aria-hidden="true" decoding="async">
+              <p class="hero-calendar-month" id="hero-calendar-month"></p>
+              <div class="hero-calendar-weekdays" aria-hidden="true">
+                <span>Do</span><span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span>
+              </div>
+              <div class="hero-calendar-days" id="hero-calendar-days" aria-hidden="true"></div>
+              <span class="visually-hidden">
+                <span class="hero-date-day" id="date-weekday"></span>
+                <span class="hero-date-full" id="date-main"></span>
+                <span class="hero-date-time" id="time-main"></span>
+              </span>
+            </div>
+
+            <section class="hero-countdown" id="fecha" aria-label="Cuenta regresiva">
+              <p class="eyebrow" id="countdown-title"></p>
+              <div class="countdown" id="countdown"></div>
+            </section>
+
+            <nav class="quick-nav" id="nav-principal" aria-label="Secciones principales">
+              <a id="nav-ubicaciones" href="#ubicaciones"></a>
+              <a id="nav-confirmacion" href="#confirmacion"></a>
+            </nav>
+          </section>
+
+          <!-- FOTO DESTACADA -->
+          <section class="memory-strip section-reveal" id="recuerdo" aria-label="Foto destacada">
+            <img id="foto-destacada" src="foto.jpg" alt="" loading="lazy">
+            <div>
+              <span id="memory-text"></span>
+            </div>
+          </section>
+
+          <!-- FAMILIA -->
+          <section class="family-block section-reveal" id="familia">
+            <p class="script-line" id="bendicion-texto"></p>
+            <p class="eyebrow" id="familia-eyebrow"></p>
+            <h2 id="familia-titulo"></h2>
+            <div class="name-list" id="familia-lista"></div>
+          </section>
+
+          <!-- UBICACIONES -->
+          <section class="locations-block section-reveal" id="ubicaciones">
+            <p class="eyebrow" id="ubicaciones-eyebrow"></p>
+            <h2 id="ubicaciones-titulo"></h2>
+            <div class="event-grid" id="ubicaciones-lista"></div>
+          </section>
+
+          <!-- ITINERARIO -->
+          <section class="timeline-block section-reveal" id="itinerario">
+            <p class="eyebrow" id="itinerario-eyebrow"></p>
+            <h2 id="itinerario-titulo"></h2>
+            <ol class="timeline-list" id="itinerario-lista"></ol>
+          </section>
+
+          <!-- REGALOS / BUZON -->
+          <section class="details-block section-reveal" id="detalles">
+            <p class="eyebrow" id="detalles-eyebrow"></p>
+            <h2 id="detalles-titulo"></h2>
+            <ul id="detalles-lista"></ul>
+          </section>
+
+          <!-- VESTIMENTA -->
+          <section class="dress-block section-reveal" id="vestimenta">
+            <p class="eyebrow" id="vestimenta-eyebrow"></p>
+            <h2 id="vestimenta-titulo"></h2>
+            <div id="vestimenta-contenido"></div>
+          </section>
+
+          <!-- RECUERDO ENTRE VESTIMENTA Y RSVP -->
+          <section class="memory-strip section-reveal is-gradient" id="recuerdo-vestimenta" aria-label="Recuerdo especial" hidden>
+            <img id="foto-recuerdo-vestimenta" src="" alt="" loading="lazy">
+            <div><span id="recuerdo-vestimenta-text"></span></div>
+          </section>
+
+          <!-- GALERIA -->
+          <section class="gallery-block section-reveal" id="galeria" hidden>
+            <p class="eyebrow" id="galeria-eyebrow"></p>
+            <h2 id="galeria-titulo"></h2>
+            <div class="gallery-grid" id="galeria-lista"></div>
+          </section>
+
+          <!-- NOTAS -->
+          <section class="notes-block section-reveal" id="notas">
+            <p class="eyebrow" id="notas-eyebrow"></p>
+            <h2 id="notas-titulo"></h2>
+            <figure class="notes-letter-deco bella-section-icon" id="notas-media" aria-hidden="true" hidden>
+              <img id="notas-media-image" alt="" loading="lazy">
+            </figure>
+            <ul id="notas-lista"></ul>
+          </section>
+
+          <!-- QR FOTOS -->
+          <section class="qr-section section-reveal" id="qr-fotos" data-section-control="qrFotos" hidden>
+            <p class="eyebrow" id="qr-fotos-eyebrow"></p>
+            <figure class="qr-section-icon bella-section-icon" id="qr-fotos-icon" aria-hidden="true" hidden>
+              <img id="qr-fotos-icon-image" alt="" loading="lazy">
+            </figure>
+            <div class="qr-card">
+              <figure class="qr-media" id="qr-fotos-media" hidden>
+                <img id="qr-fotos-image" alt="" loading="lazy">
+              </figure>
+              <div class="qr-body">
+                <h2 id="qr-fotos-title"></h2>
+                <p id="qr-fotos-text"></p>
+                <a class="primary-button qr-button" id="qr-fotos-link" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+              </div>
+            </div>
+          </section>
+
+          <!-- QR PASES -->
+          <section class="qr-section section-reveal" id="qr-pases" data-section-control="qrPases" hidden>
+            <p class="eyebrow" id="qr-pases-eyebrow"></p>
+            <figure class="qr-section-icon bella-section-icon" id="qr-pases-icon" aria-hidden="true" hidden>
+              <img id="qr-pases-icon-image" alt="" loading="lazy">
+            </figure>
+            <div class="qr-card">
+              <figure class="qr-media" id="qr-pases-media" hidden>
+                <img id="qr-pases-image" alt="" loading="lazy">
+              </figure>
+              <div class="qr-body">
+                <h2 id="qr-pases-title"></h2>
+                <p id="qr-pases-text"></p>
+                <a class="primary-button qr-button" id="qr-pases-link" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+              </div>
+            </div>
+          </section>
+
+          <!-- PASES -->
+          <section class="qr-section section-reveal" id="pases" data-section-control="pases" hidden>
+            <p class="eyebrow" id="pases-eyebrow"></p>
+            <div class="qr-card pases-card">
+              <div class="qr-body pases-body">
+                <h2 id="pases-title"></h2>
+                <p id="pases-text"></p>
+                <a class="primary-button qr-button pases-button" id="pases-link" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+              </div>
+            </div>
+          </section>
+
+          <!-- CONFIRMACION -->
+          <section class="rsvp-block section-reveal" id="confirmacion">
+            <p class="eyebrow" id="confirmacion-eyebrow"></p>
+            <h2 id="confirmacion-titulo"></h2>
+            <div class="confirmacion-visual" id="confirmacion-visual"></div>
+            <form>
+              <input id="rsvp-nombre" type="text" placeholder="Tu nombre completo" aria-label="Nombre">
+              <input id="rsvp-invitados" type="number" value="" aria-label="Invitados" hidden disabled aria-hidden="true">
+              <textarea id="rsvp-mensaje" rows="3" placeholder="Mensaje opcional" aria-label="Mensaje"></textarea>
+              <button id="rsvp-boton" type="button">Confirmar asistencia</button>
+            </form>
+          </section>
+
+          <!-- MALEFICENT FOOTER DECO -->
+          <figure class="footer-silueta-deco footer-malefica-deco section-reveal" aria-hidden="true">
+            <img src="malefica.png" alt="" loading="lazy" decoding="async">
+          </figure>
+
+          <!-- CIERRE -->
+          <footer class="farewell-block section-reveal" id="cierre">
+            <p id="cierre-nota"></p>
+            <h2 id="cierre-titulo"></h2>
+          </footer>
+
+          <!-- CONTACTO -->
+          <a class="pistache-credit" id="pistache-credit-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Créditos del diseño" hidden>
+            <span id="pistache-credit-text"></span>
+            <strong id="pistache-credit-brand"></strong>
+          </a>
+        </main>
+        <!-- Footer -->
+        <footer class="bd-footer pb-3" >
+            
+            <br>
+            <iframe src="https://ztart.mx/incrust/black.html" width="100%" height="auto" frameborder="0"></iframe>
+
+        </footer>
+
+
+
+
+        <!-- MUSICA -->
+        <button class="music-button music-button--bella" id="music-toggle" type="button" data-music aria-label="Música" hidden>
+          <span class="bella-music-stage" aria-hidden="true">
+            <img class="bella-music-base" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/base.webp?=cache02" alt="">
+            <img class="bella-music-wheel" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/rueda.webp?=cache02" alt="">
+            <img class="bella-music-top" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/superior.webp?=cache02" alt="">
+            <img class="bella-music-note bella-music-note--1" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/2.webp?=cache02" alt="">
+            <img class="bella-music-note bella-music-note--2" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/3.webp?=cache02" alt="">
+            <img class="bella-music-note bella-music-note--3" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/4.webp?=cache02" alt="">
+            <img class="bella-music-note bella-music-note--4" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/5.webp?=cache02" alt="">
+            <img class="bella-music-note bella-music-note--5" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/6.webp?=cache02" alt="">
+            <img class="bella-music-note bella-music-note--6" data-src="https://pistachegirasol.com/Assets/bella-durmiente/reloj/7.webp?=cache02" alt="">
+          </span>
+        </button>
+        <audio id="music" preload="none" loop></audio>
+
+        <!-- LIGHTBOX GALERIA -->
+        <div class="lightbox" id="lightbox" hidden>
+          <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Cerrar">&times;</button>
+          <button id="lightbox-prev" class="lightbox-nav is-prev" type="button" aria-label="Foto anterior">&lt;</button>
+          <img id="lightbox-image" alt="">
+          <button id="lightbox-next" class="lightbox-nav is-next" type="button" aria-label="Foto siguiente">&gt;</button>
+        </div>
+
+      </div><!-- /.invite-viewport -->
+    </div><!-- /.phone-preview-stage -->
+  </div><!-- /.phone-preview-shell -->
+
+<script id="invitacion-config" type="application/json">
+    
+
+
+{
+  "locale": "es-MX",
+  "autoScroll": {
+    "activo": true,
+    "velocidad": 0.6,
+    "inicioMs": 1200,
+    "reanudarMs": 4000
+  },
+  "hero": {
+    "eyebrow": "Con la gracia de un cuento de hadas",
+    "nombre": "Lesly",
+    "frase": "Una noche de cristal bajo la luz del palacio.",
+    "foto": "foto.jpg",
+    "fotoAlt": "Lesly"
+  },
+  "memory": {
+    "src": "foto.jpg",
+    "alt": "Lesly",
+    "texto": "Cada momento contigo es un sueño hecho realidad",
+    "gradient": true
+  },
+  "fecha": {
+    "dia": "Sábado",
+    "fecha": "2026-12-05",
+    "hora": "3:30 PM"
+  },
+  "reloj": {
+    "titulo": "Faltan",
+    "unidades": {
+      "dias": "Días",
+      "horas": "Horas",
+      "minutos": "Min",
+      "segundos": "Seg"
+    }
+  },
+  "labels": {
+    "navUbicaciones": "Mapa",
+    "navConfirmacion": "RSVP",
+    "ubicacionBoton": "Ver ubicación",
+    "familiaEyebrow": "Con amor",
+    "familiaTitulo": "Mi familia",
+    "ubicacionesEyebrow": "Dónde celebraremos",
+    "ubicacionesTitulo": "Ubicaciones",
+    "itinerarioEyebrow": "El gran día",
+    "itinerarioTitulo": "Itinerario",
+    "detallesEyebrow": "Detalles especiales",
+    "detallesTitulo": "Regalos",
+    "vestimentaEyebrow": "Código de vestimenta",
+    "notasEyebrow": "Por favor considera",
+    "notasTitulo": "Notas importantes",
+    "confirmacionEyebrow": "¿Nos acompañas?"
+  },
+  "entrada": {
+    "boton": "Abrir invitación"
+  },
+  "theme": {
+    "decoraciones": [
+      {
+        "activo": true,
+        "src": "fondo.webp",
+        "clase": "deco-crown"
+      }
+    ]
+  },
+  "familia": [
+    {
+      "activo": true,
+      "titulo": "Mis padres",
+      "media": "padres.webp",
+      "mediaAlt": "Padres de Lesly",
+      "nombres": [
+        "Viridiana Ramirez Moreno",
+        "Héctor Ulises Hernández Rosales"
+      ]
+    },
+    {
+      "activo": true,
+      "titulo": "Padrinos de honor",
+      "media": "padrinos.webp",
+      "mediaAlt": "Padrinos de Lesly",
+      "nombres": [
+        " Irene Pineda Hernández  ",
+        " Jesús Alejandro Pineda Hernández "
+      ]
+    }
+  ],
+  "ubicaciones": [
+    {
+      "activo": true,
+      "tipo": "Ceremonia Religiosa",
+      "lugar": "Parroquia de Santa Maria de Guadalupe de Cuevas",
+      "direccion": " Calle Ignacio Zaragoza Manzana 003, 55610 Santa María Cuevas, Méx. ",
+      "hora": "1:45 PM",
+      "url": "https://maps.app.goo.gl/iVqz3DR7xvjK2W3B8",
+      "foto": "ceremonia.png"
+    },
+    {
+      "activo": true,
+      "tipo": "Recepción",
+      "lugar": " ",
+      "direccion": "  Santa María Cuevas, Estado de México",
+      "hora": "3:30 PM",
+      "url": "https://maps.app.goo.gl/xALsCqC1YNeDpLJU8",
+      "foto": "recepcion.png"
+    }
+  ],
+  "itinerario": [
+    {
+      "activo": true,
+      "hora": "5:00 PM",
+      "titulo": "Ceremonia religiosa",
+      "icono": "iglesia.webp"
+    },
+    {
+      "activo": true,
+      "hora": "6:10 PM",
+      "titulo": "Recepción de invitados",
+      "icono": "salon.webp"
+    },
+    {
+      "activo": true,
+      "hora": "7:00 PM",
+      "titulo": "Vals y entrada de la quinceañera",
+      "icono": "comida.webp"
+    },
+    {
+      "activo": true,
+      "hora": "8:00 PM",
+      "titulo": "Cena",
+      "icono": "brindis.webp"
+    },
+    {
+      "activo": true,
+      "hora": "9:00 PM",
+      "titulo": "Baile y celebración",
+      "icono": "fin-evento.webp"
+    }
+  ],
+  "detalles": {
+    "lluviaSobres": {
+      "activo": true,
+      "titulo": "Lluvia de Sobres",
+      "texto": "Tu presencia es el mejor regalo, pero si deseas obsequiarme algo, una lluvia de sobres o un regalo sorpresa será muy bienvenido.",
+      "media": "lluvia-sobres.webp"
+    }
+  },
+  "vestimenta": {
+    "titulo": "Vestimenta",
+    "texto": "formal evitando el color palo de rosa",
+    "coloresNoPermitidos": [
+      "palo de rosa"
+    ],
+    "coloresNoPermitidosTitulo": "Colores a evitar",
+    "media": "buzon.webp"
+  },
+  "notas": [
+    "Confirmar asistencia antes del 15 de Noviembre",
+    "Respetar el número de accesos asignados."
+  ],
+  "confirmacion": {
+    "activo": true,
+    "titulo": "Confirmación de asistencia",
+    "nombrePlaceholder": "Tu nombre completo",
+    "mensajePlaceholder": "¿Algún mensaje especial para Lesly?",
+    "boton": "Confirmar asistencia",
+    "whatsapp": {
+      "activo": true,
+      "numero": "+5215521861649", 
+      "mensaje": "¡Hola Lesly! Confirmo mi asistencia a tus XV años. 🌸"
+    },
+    "media": "confirmacion.webp"
+  },
+  "cierre": {
+    "nota": "Con todo mi cariño,",
+    "titulo": "¡Te espero en mi gran noche!"
+  },
+  "musica": {
+    "activo": true,
+    "src": "musica.mp3"
+  },
+  "ornamentos": [
+    {
+      "activo": true,
+      "after": "#familia",
+      "imagenes": [
+        "https://pistachegirasol.com/Assets/bella-durmiente/decoracion/rama-izq.webp?=cache02",
+        "https://pistachegirasol.com/Assets/bella-durmiente/decoracion/rama-der.webp?=cache02"
+      ]
+    },
+    {
+      "activo": true,
+      "after": "#ubicaciones",
+      "imagenes": [
+        "https://pistachegirasol.com/Assets/bella-durmiente/decoracion/rama-izq.webp?=cache02",
+        "https://pistachegirasol.com/Assets/bella-durmiente/decoracion/rama-der.webp?=cache02"
+      ]
+    }
+  ],
+  "secciones": {
+    "hero": true,
+    "heroFoto": true,
+    "fecha": true,
+    "reloj": true,
+    "fotoDestacada": true,
+    "familia": true,
+    "ubicaciones": true,
+    "itinerario": false,
+    "regalos": true,
+    "vestimenta": true,
+    "recuerdoVestimenta": false,
+    "notas": true,
+    "galeria": false,
+    "qrFotos": false,
+    "qrPases": false,
+    "pases": false,
+    "confirmacion": true,
+    "final": true
+  },
+  "hadasVoladoras": {
+    "activo": true,
+    "personajes": [
+      {
+        "activo": true,
+        "src": "hada-azul.webp",
+        "tamano": "clamp(66px, 17vw, 108px)",
+        "invertirVuelo": false
+      },
+      {
+        "activo": true,
+        "src": "hada-rosa.webp",
+        "tamano": "clamp(60px, 15vw, 96px)",
+        "invertirVuelo": true
+      }
+    ]
+  },
+  "notasMedia": "reglas.webp"
+}
+
+
+
+</script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/bella-responsive.js"></script>
+  <script defer src="js/init.js"></script>
+</body>
+</html>

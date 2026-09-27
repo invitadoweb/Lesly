@@ -1,0 +1,153 @@
+:root {
+  --preview-width: 100vw;
+  --preview-height: 100svh;
+  --preview-scale: 1;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden !important;
+  overscroll-behavior-x: none;
+}
+
+body {
+  justify-items: center;
+}
+
+.phone-preview-shell {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  overflow-x: clip;
+}
+
+.phone-preview-stage {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  transform-origin: top center;
+  overflow-x: clip;
+}
+
+.invite-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  overflow-x: clip;
+}
+
+body.desktop-phone-preview {
+  padding: 18px 0 28px;
+}
+
+body.desktop-phone-preview .phone-preview-shell {
+  width: var(--preview-width);
+  max-width: var(--preview-width);
+  min-height: var(--preview-height);
+  border-radius: 34px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.20),
+    0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+body.desktop-phone-preview .phone-preview-stage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%) scale(var(--preview-scale));
+}
+
+body.desktop-phone-preview .invite-viewport {
+  min-height: calc(100vw * 16 / 9);
+}
+
+
+/* MARK: RESPONSIVE-DISPOSITIVOS */
+:root { --app-height: 100dvh; --safe-bottom: env(safe-area-inset-bottom, 0px); }
+html.is-iphone, body.is-iphone { min-height: var(--app-height); -webkit-text-size-adjust: 100%; touch-action: manipulation; }
+body.is-iphone {
+  background:
+    var(--fondo-tema) center top / 100% auto repeat-y scroll,
+    var(--color-fondo);
+  background-attachment: scroll !important;
+}
+body.is-iphone .invite-viewport, body.is-android .invite-viewport { min-height: var(--app-height); }
+body.is-iphone .opening-envelope, body.is-iphone .envelope-screen { min-height: var(--entry-viewport-height, var(--app-height)); padding-bottom: var(--safe-bottom); }
+body.is-iphone .envelope-screen { height: var(--entry-viewport-height, var(--app-height)); }
+body.is-iphone .envelope-screen { padding-bottom: calc(clamp(3.2rem, 12svh, 7rem) + var(--safe-bottom)); }
+body.is-iphone .music-button, body.is-iphone .icon-action { bottom: calc(1rem + var(--safe-bottom)) !important; }
+body.is-iphone .decor-layer img,
+body.is-iphone .portrait-frame::before,
+body.is-iphone .count-clock-deco,
+body.is-iphone .notes-letter-deco,
+body.is-iphone .detalle-media img,
+body.is-iphone .dress-media img,
+body.is-iphone .confirmacion-media img,
+body.is-iphone .footer-silueta-deco,
+body.is-iphone .wonder-ornament,
+body.is-iphone .wonder-ornament.magic-reveal.is-visible,
+body.is-iphone .wonder-ornament img {
+  box-shadow: none !important;
+  filter: none !important;
+}
+body.is-android {
+  min-height: var(--app-height);
+  background:
+    var(--fondo-tema) center top / 100% auto repeat-y scroll,
+    var(--color-fondo);
+  background-attachment: scroll !important;
+}
+@media (max-width: 430px) { input, textarea, button, select { font-size: 16px; } img, video, canvas, svg { max-width: 100%; } }
+
+/* MARK: RENDIMIENTO AL DESLIZAR */
+/* El fondo fijo y el blur de cada panel fuerzan repintados costosos en celular. */
+body.is-iphone .details-block,
+body.is-iphone .farewell-block,
+body.is-iphone .family-block,
+body.is-iphone .locations-block,
+body.is-iphone .timeline-block,
+body.is-iphone .dress-block,
+body.is-iphone .gallery-block,
+body.is-iphone .notes-block,
+body.is-iphone .rsvp-block,
+body.is-iphone .qr-section,
+body.is-android .details-block,
+body.is-android .farewell-block,
+body.is-android .family-block,
+body.is-android .locations-block,
+body.is-android .timeline-block,
+body.is-android .dress-block,
+body.is-android .gallery-block,
+body.is-android .notes-block,
+body.is-android .rsvp-block,
+body.is-android .qr-section {
+  backdrop-filter: none;
+}
+
+@media (max-width: 680px) {
+  body {
+    background:
+      var(--fondo-tema) center top / 100% auto repeat-y scroll,
+      var(--color-fondo);
+    background-attachment: scroll !important;
+  }
+  .details-block,
+  .farewell-block,
+  .family-block,
+  .locations-block,
+  .timeline-block,
+  .dress-block,
+  .gallery-block,
+  .notes-block,
+  .rsvp-block,
+  .qr-section { backdrop-filter: none; }
+  .gallery-grid img { box-shadow: 0 7px 14px rgba(5, 18, 45, .18); }
+}
